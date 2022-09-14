@@ -1,0 +1,19 @@
+{
+  "name": "qa-api",
+  "version": "1.0.0",
+  "description": "API for Questions & Answers Data",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rfp2207Frodo/rfp2207-QA-API.git"
+  },
+  "author": "Andy Ho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rfp2207Frodo/rfp2207-QA-API/issues"
+  },
+  "homepage": "https://github.com/rfp2207Frodo/rfp2207-QA-API#readme"
+}
