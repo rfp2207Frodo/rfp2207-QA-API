@@ -4,7 +4,8 @@
   "description": "API for Questions & Answers Data",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "schema": "psql -U postgres <schema.sql"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/rfp2207Frodo/rfp2207-QA-API/issues"
   },
-  "homepage": "https://github.com/rfp2207Frodo/rfp2207-QA-API#readme"
+  "homepage": "https://github.com/rfp2207Frodo/rfp2207-QA-API#readme",
+  "dependencies": {
+    "mongoose": "^6.6.1",
+    "pg": "^8.8.0"
+  }
 }
