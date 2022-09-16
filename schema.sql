@@ -45,46 +45,11 @@ CREATE TABLE answers (
   PRIMARY KEY ("id")
 );
 
-
-=======
-DROP TABLE IF EXISTS `Answers`;
-
-CREATE TABLE `Answers` (
-  `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `body` VARCHAR(1000) NOT NULL DEFAULT 'NULL',
-  `date` VARCHAR(250) NOT NULL DEFAULT 'NULL',
-  `answerer_name` VARCHAR NOT NULL DEFAULT 'NULL',
-  `helpfulness` INT NOT NULL DEFAULT 0,
-  `reported` bit NOT NULL DEFAULT false,
-  `id_Questions` INTEGER NOT NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-);
-
--- ---
--- Table 'Questions'
---
--- ---
-
-DROP TABLE IF EXISTS `Questions`;
-
-CREATE TABLE `Questions` (
-  `id` INTEGER NOT NULL AUTO_INCREMENT DEFAULT NULL,
-  `question_body` VARCHAR(1000) NOT NULL DEFAULT 'NULL',
-  `question_date` VARCHAR(250) NULL DEFAULT NULL,
-  `asker_name` VARCHAR(250) NOT NULL DEFAULT 'NULL',
-  `question_helpfulness` INTEGER NOT NULL DEFAULT 0,
-  `reported` bit NOT NULL DEFAULT false,
-  `product_id` INTEGER NOT NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-);
-
->>>>>>> e61e296ba461f9f13fd77f95758a3e691b0beeee
 -- ---
 -- Table 'Photos'
 --
 -- ---
 
-<<<<<<< HEAD
 DROP TABLE IF EXISTS photos;
 
 CREATE TABLE photos (
@@ -99,16 +64,6 @@ CREATE TABLE photos (
 \copy answers(id, question_id, body, "date", answerer_name, answerer_email, reported, helpfulness ) FROM './data/answers.csv' DELIMITER ',' CSV HEADER;
 
 \copy photos(id, answer_id, "url") FROM './data/answers_photos.csv' DELIMITER ',' CSV HEADER;
-
-=======
-DROP TABLE IF EXISTS `Photos`;
-
-CREATE TABLE `Photos` (
-  `id` INTEGER NOT NULL AUTO_INCREMENT DEFAULT NULL,
-  `url` VARCHAR NOT NULL DEFAULT 'NULL',
-  `id_Answers` INTEGER NOT NULL,
-  PRIMARY KEY (`id`)
-);
 
 
 -- ---
