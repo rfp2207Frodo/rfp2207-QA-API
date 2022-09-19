@@ -2,10 +2,11 @@
   "name": "qa-api",
   "version": "1.0.0",
   "description": "API for Questions & Answers Data",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "test": "test",
-    "schema": "psql -U postgres <schema.sql"
+    "test": "node index.js",
+    "schema": "psql -U postgres <schema.sql",
+    "server": "npx nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,9 @@
   },
   "homepage": "https://github.com/rfp2207Frodo/rfp2207-QA-API#readme",
   "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
     "mongoose": "^6.6.1",
     "pg": "^8.8.0"
   }
