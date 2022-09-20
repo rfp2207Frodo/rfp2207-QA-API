@@ -14,10 +14,29 @@ module.exports = {
   },
 
   post: function(req, res) {
-    console.log(req.query);
     models.postQuestion(req.query)
       .then (() => {
         res.sendStatus(201);
+      })
+      .catch ((err) => {
+        res.sendStatus(500);
+      })
+  },
+
+  helpfulness: function(req, res) {
+    models.markHelpful(req.query)
+      .then (() => {
+        res.sendStatus(204);
+      })
+      .catch ((err) => {
+        res.sendStatus(500);
+      })
+  },
+
+  report: function(req, res) {
+    models.addReport(req.query)
+      .then (() => {
+        res.sendStatus(204);
       })
       .catch ((err) => {
         res.sendStatus(500);
