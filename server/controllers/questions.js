@@ -5,10 +5,7 @@ module.exports = {
     let query = req.query;
     models.getQuestions(query)
       .then((results) => {
-        // console.log(results.rows);
-        let temp = {product_id: query.product_id, results: results.rows};
-        // console.log(temp);
-        res.send(temp);
+        res.send({product_id: query.product_id, results: results});
       })
       .catch((err) => (console.log('Error with controllers')))
   },

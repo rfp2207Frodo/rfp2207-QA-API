@@ -17,9 +17,8 @@ module.exports = {
   },
 
   postAnswer: function(params) {
-    console.log(params.photos);
     let queryString = `WITH first_post as (
-      INSERT INTO answers (question_id, abody, answerer_name, answerer_email) VALUES ('${params.question_id}', '${params.body}', '${params.name}', '${params.email}') RETURNING id
+      INSERT INTO answers (question_id, body, answerer_name, answerer_email) VALUES ('${params.question_id}', '${params.body}', '${params.name}', '${params.email}') RETURNING id
     )
     INSERT INTO photos (answer_id, url) VALUES ((SELECT id from first_post), unnest(array${params.photos}))`;
     return postgres.query(queryString);
