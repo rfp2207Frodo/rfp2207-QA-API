@@ -2,19 +2,14 @@ const{Client}= require("pg");
 const config = require ("../../config.js");
 
 const postgres = new Client({
-  host: "localhost",
-  port: 5432,
-  database: config.database,
   user: config.user,
+  host: config.host,
+  database: config.database,
   password: config.password,
+  port: config.port,
 });
 
 postgres.connect()
-  .then (() => console.log("success"))
-  // .then (() => postgres.query("select * from questions limit 5"))
-  // .then (results => console.table(results.rows))
-  .catch ((err) => (console.log("failed")))
-  // .finally (() => postgres.end());
-
+  .catch ((err) => (console.log("Failed to connect to database")))
 
 module.exports = postgres;

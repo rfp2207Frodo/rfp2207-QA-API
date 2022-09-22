@@ -84,4 +84,3 @@ module.exports = {
     return postgres.query(queryString);
   }
 };
-// INNER JOIN photos p ON p.answer_id = a.id

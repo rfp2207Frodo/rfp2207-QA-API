@@ -74,10 +74,5 @@ CREATE INDEX a_qid ON answers(question_id);
 
 CREATE INDEX p_aid ON photos(answer_id);
 
--- ---
--- Foreign Keys
--- ---
 
--- ALTER TABLE answers ADD FOREIGN KEY (id_questions) REFERENCES questions ("id");
--- ALTER TABLE photos ADD FOREIGN KEY (id_answers) REFERENCES answers ("id");
 
