@@ -1,26 +1,6 @@
 const postgres = require ('../db/index.js');
 
 module.exports = {
-  /* First Attempt Using Subqueries (400 ms)*/
-  // getQuestions: function (params) {
-  //   let queryString =
-  //   `SELECT q.id as question_id, question_body, question_date, asker_name, question_helpfulness, q.reported,
-  //     COALESCE (json_object_agg(a.id, json_build_object(
-  //       'id', a.id,
-  //       'body', a.body,
-  //       'date', a.date,
-  //       'answerer_name', a.answerer_name,
-  //       'helpfulness', a.helpfulness
-  //     )) FILTER (WHERE a.id IS NOT NULL), '{}') answers
-  //   FROM questions q
-  //   INNER JOIN answers a ON a.question_id = q.id
-  //   WHERE product_id = ${params.product_id} AND q.reported = FALSE
-  //   GROUP BY q.id
-  //   LIMIT ${params.count} OFFSET ${(params.page - 1) * params.count}`;
-  //   return postgres.query(queryString);
-  // },
-
-  /* Second Attempt Using Promises (45 ms)*/
   getQuestions: function (params) {
     let queryString =
     `SELECT id AS question_id, question_body, question_date, asker_name, question_helpfulness FROM questions
@@ -55,7 +35,6 @@ module.exports = {
       })
       .then((answers) => {
         for (let i = 0; i < answers.length; i++) {
-          console.log(answers[i]);
           question.answers[answers[i].id] = answers[i];
         }
         return question;
