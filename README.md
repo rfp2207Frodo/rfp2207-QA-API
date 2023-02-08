@@ -8,7 +8,7 @@ This is an API service that provides persistent question-and-answer data for var
 
 Built With:
 -------------
-* [React](https://reactjs.org/)
+* [PostgreSQL](https://www.postgresql.org/)
 * [Node](https://nodejs.dev/en/)
 * [Express](https://expressjs.com/)
 * [Artillery](https://www.artillery.io/)
