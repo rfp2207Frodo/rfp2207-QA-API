@@ -6,6 +6,8 @@ Overview:
 ---------
 This is an API service that provides persistent question-and-answer data for various products of an E-commerce site. I performed an ETL with millions of different question, answer, and photo data inputs and modeled the data using PostgreSQL to withstand the high volume of requests. I developed nested queries with PostgreSQL and Bluebird.js to structure data and reduce query times to ~20 ms. I also performed horizontal scaling with NGINX and AWS EC2 instances to decrease the average latency of Loader.io stress tests by over 1000%.
 
+![GIF Expired](http://g.recordit.co/XwX7Pp6KtM.gif)
+
 Built With:
 -------------
 * [PostgreSQL](https://www.postgresql.org/)
